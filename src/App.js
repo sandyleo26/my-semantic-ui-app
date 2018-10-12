@@ -1,24 +1,14 @@
-import React, { Component } from 'react';
-import { Button, Modal } from 'semantic-ui-react'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import DownloadApplicationModal from './downloadApplicationModal';
 
-const ModalModalExample = () => (
-  <Modal size="tiny" trigger={<Button>Download Application</Button>}>
-    <Modal.Header>Download Application</Modal.Header>
-    <Modal.Actions>
-      <Button positive>Summary</Button>
-      <Button positive icon='cloud download' labelPosition='right' content='Attachments' />
-    </Modal.Actions>
-  </Modal>
+const App = () => (
+  <Router>
+    <Switch>
+      <Route path='/modal' component={DownloadApplicationModal} />
+    </Switch>
+  </Router>
 )
-
-
-class App extends Component {
-  render() {
-    return (
-      <ModalModalExample />
-    );
-  }
-}
 
 export default App;
