@@ -3,6 +3,7 @@ import {Grid, Menu, Label, Input } from 'semantic-ui-react';
 
 const style = {};
 const sidebarWidth = 250;
+const sidebarMarginLeft = 15;
 style.menu = {
   position: 'fixed',
   display: 'flex',
@@ -10,7 +11,8 @@ style.menu = {
   top: 0,
   bottom: 0,
   left: 0,
-  width: sidebarWidth,
+  marginLeft: sidebarMarginLeft,
+  width: sidebarWidth + sidebarMarginLeft,
   overflowX: 'hidden',
 }
 
@@ -22,7 +24,7 @@ class LayoutSidebar extends React.Component {
           <Menu
             vertical
             text
-            compact
+
             >
             <Menu.Item name='inbox'>
               <Label color='teal'>1</Label>
@@ -44,9 +46,12 @@ class LayoutSidebar extends React.Component {
             </Menu.Item>
           </Menu>
         </div>
-        <div style={{ marginLeft: 250, }}>
-          <Grid>
+        <div style={{ marginLeft: style.menu.width, }}>
+          <Grid column={1}>
+            <Grid.Column>
 
+            Application Content
+            </Grid.Column>
           </Grid>
         </div>
       </div>
